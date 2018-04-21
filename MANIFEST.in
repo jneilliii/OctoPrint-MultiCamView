@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_multicamview/templates *
+recursive-include octoprint_multicamview/translations *
+recursive-include octoprint_multicamview/static *

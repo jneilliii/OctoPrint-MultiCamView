@@ -1,0 +1,21 @@
+<div class="pull-right btn btn-mini icon-resize-full" data-bind="click: $root.resize"></div>
+<div class="row-fluid" data-bind="foreach: settingsViewModel.settings.plugins.multicamview.webcams">
+<!-- ko if: (cam_type() == 'mjpg') -->
+	<div class="mjpg_container" data-bind="attr: {width: cam_width, height: cam_height},title: cam_type() + ':' + cam_url()">
+		<img data-bind="attr: {src: cam_url, width: cam_width, height: cam_height}"></img>
+	</div>
+<!-- /ko -->
+<!-- ko if: (cam_type() == 'mp4') -->
+	<div class="mp4_container" data-bind="attr: {width: cam_width, height: cam_height,title: cam_type() + ':' + cam_url()}">
+		<video controls data-bind="attr: {width: cam_width, height: cam_height}">
+			<source type="video/mp4" data-bind="attr: {src: cam_url}">
+			Your browser does not support the video tag.
+		</video>
+	</div>
+<!-- /ko -->
+<!-- ko if: (cam_type() == 'iframe') -->
+	<div class="iframe_container" data-bind="attr: {width: cam_width, height: cam_height,title: cam_type() + ':' + cam_url()}">
+		<iframe data-bind="attr: {src: cam_url, width: cam_width, height: cam_height}"></iframe>
+	</div>
+<!-- /ko -->
+</div>
