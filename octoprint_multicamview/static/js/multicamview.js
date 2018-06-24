@@ -18,6 +18,10 @@ $(function() {
 			self.webcams(self.settingsViewModel.settings.plugins.multicamview.webcams());
 		}
 		
+		self.onAfterBinding = function() {
+			console.log(self.settingsViewModel.settings.appearance.color());
+		}
+		
 		self.onEventSettingsUpdated = function(payload) {
 			self.webcams(self.settingsViewModel.settings.plugins.multicamview.webcams());
 		}
